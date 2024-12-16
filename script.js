@@ -5,6 +5,14 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
+let centerAttraction = true; // Focus on center for 10 seconds
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+
+// Timer to disable center focus after 10 seconds
+setTimeout(() => {
+    centerAttraction = false;
+}, 4500);
 
 // Define a range of colors that work on light and dark backgrounds
 const particleColors = [
@@ -14,7 +22,6 @@ const particleColors = [
     'rgba(255, 223, 186, 0.5)',  // Light peach
     'rgba(204, 255, 144, 0.5)'   // Light green
 ];
-
 
 // Particle Class
 class Particle {
@@ -38,12 +45,21 @@ class Particle {
 
     // Update particle position
     update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+        if (centerAttraction) {
+            // Move particles towards the center using easing
+            const dx = centerX - this.x;
+            const dy = centerY - this.y;
+            this.x += dx * 0.02; // Attraction strength
+            this.y += dy * 0.02;
+        } else {
+            // Normal particle movement
+            this.x += this.speedX;
+            this.y += this.speedY;
 
-        // Respawn particles at opposite edge
-        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+            // Respawn particles at edges
+            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+        }
     }
 }
 
