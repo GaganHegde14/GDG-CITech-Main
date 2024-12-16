@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG-CITech Main</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="./assets/logoNObg.png">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="preloader">
+        <video id="preloader-video" muted>
+            <source src="assets/Centered_Animation.mp4" type="video/mp4">
+            Your browser does not support the loader.
+        </video>
+    </div>
+    
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img class="clgLOGO" src="./assets/cambridge logo.png" alt="GDSC Logo">
+                <div class="logo-divider"></div>
+                <img class="gdgLOGO" src="./assets/logoNObg.png" alt="GDSC Logo">
+            </a>
+            <a href="index.html" style="text-decoration: none; color: white;">
+            <span>Google Developer Group - CITech Main</span>
+        </a>
+        </div>
+
+        <!-- Hamburger menu button -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation menu -->
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#abc">About us</a>
+                <a href="#events">Events</a>
+                <a href="#Projects">Projects</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main>
+        <section class="home-section" id="home">
+            <div class="content">
+                <!-- <div class="building-section">
+
+                    <div class="sym">
+                        <img src="./assets/logoNObg.png" alt="homePic" class="building">
+                    </div>
+                    <div class="belowSymbol">
+                        Google Developer Group
+                        <br>
+                        CIT Main Campus
+                    </div>
+                </div> -->
+                <div class="text-section">
+                    <div class="home-logo">
+                        <img src="./assets/logoNObg.png" alt="GDG Logo" class="home-logo-img">
+                    </div>
+                    
+                    <h2>
+                        <span class="animated-text">W</span>
+                        <span class="animated-text">E</span>
+                        <span class="animated-text"> </span>
+                        <span class="animated-text">A</span>
+                        <span class="animated-text">R</span>
+                        <span class="animated-text">E</span>
+                        <span class="animated-text"> </span>
+                        <span class="animated-text">G</span>
+                        <span class="animated-text">D</span>
+                        <span class="animated-text">S</span>
+                        <span class="animated-text">C</span>
+                        <span class="animated-text">-</span>
+                        <span class="animated-text">C</span>
+                        <span class="animated-text">I</span>
+                        <span class="animated-text">T</span>
+                        <span class="animated-text">E</span>
+                        <span class="animated-text">C</span>
+                        <span class="animated-text">H</span>
+                        <span class="animated-text"> </span>
+                        <span class="animated-text">M</span>
+                        <span class="animated-text">A</span>
+                        <span class="animated-text">I</span>
+                        <span class="animated-text">N</span>
+                    </h2>
+                    <p class="description">
+                        At GDSC Cambridge Institute Of Technology, we thrive to provide opportunities to learn & access deep technical content by hosting cool training workshops, collaborating with amazing community members, organizing tech talks, and various conferences.
+                    </p>
+                    <p class="events">
+                        We are a student led community aimed at building solutions to local problems and to improve and uplift budding developers. We are actively looking for collaborations for projects, events and webinars.
+                    </p>
+                    
+                    <div class="unique-card" id="abc">
+                        <a class="unique-social-container whatsapp-container" href="https://chat.whatsapp.com/ISzPWBcam0C4w8c4R7bbr6">
+                          <svg viewBox="0 0 16 16" class="unique-social-svg whatsapp-svg">
+                            <path
+                              d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                            ></path>
+                          </svg>
+                        </a>
+                      
+                        <a class="unique-social-container linkedin-container" href="https://www.linkedin.com/company/gdsccit/?fbclid=PAZXh0bgNhZW0CMTEAAab0hwgPhuu_vaiqs3fyXHA3MRrJhNfY1G5dgh1R3Bvy16G5bXAL-OZgqOk_aem_Xk_1wZqglW597CshVFYOdg">
+                          <svg viewBox="0 0 448 512" class="unique-social-svg linkedin-svg">
+                            <path
+                              d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                            ></path>
+                          </svg>
+                        </a>
+                      
+                        <a class="unique-social-container instagram-container" href="https://www.instagram.com/gdg.cit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                          <svg viewBox="0 0 16 16" class="unique-social-svg instagram-svg">
+                            <path
+                              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                      
+                    
+                </div>
+            </div>
+            
+        </section>
+        <section class="alert-container">
+        <div class="alert-cards" id="alertt">
+            <div class="alert-card error" onmouseover="showText(this)" onmouseout="hideText(this)">
+              <div class="icon-text">
+                <svg
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <p class="text" data-hover-text="Gooogle Developer Student Club is a student-led community focused on learning, building, and solving real world problems through technology. We empower students to grow as developers and leaders, fostering innovation and collaboration">Know more about us?</p>
+              </div>
+            </div>
+            <div class="alert-card info" onmouseover="showText(this)" onmouseout="hideText(this)">
+              <div class="icon-text">
+                <svg
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <p class="text" data-hover-text="We provide hands-on learning experiences through workshops,hackathons, and real-world projects.Our focus is on exploring technologies like web development, AI, cloud computing, quantum computing and more.">What do we do?</p>
+              </div>
+            </div>
+            <div class="alert-card success" onmouseover="showText(this)" onmouseout="hideText(this)">
+              <div class="icon-text">
+                <svg
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <p class="text" data-hover-text="Learn cutting-edge technologies, Connect with peers,industry experts, and Google mentors. Gain access to internships and career growth paths.">Why Join Us??</p>
+              </div>
+            </div>
+            <div class="alert-card warning" onmouseover="showText(this)" onmouseout="hideText(this)">
+              <div class="icon-text">
+                <svg
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <p class="text" data-hover-text="We aim to bridge the gap between academics and industry by forstering a collaborative environment where students can innovate, grow and create solutions that make an imact. Join us to learn, build and lead!!">Our Vision..</p>
+              </div>
+            </div>
+          </div>
+          
+    </section>
+        <div class="cardd-container">
+            <div class="cardd odd-card-red">
+                <div class="default-text">LEARN</div>
+                <div class="hover-text">
+                    <p>Expand your knowledge through hands-on workshops and engaging sessions. Master
+                        new technologies and skills to stay ahead in the tech world.</p>
+                   <br>
+                        <button class="red-button"><a href="#Learn">Explore Learning Resources</a></button>
+                </div>
+            </div>
+            <div class="cardd odd-card-blue">
+                <div class="default-text">CONNECT</div>
+                <div class="hover-text">
+                    <p>Network with skilled teammates and industry professionals as you build your
+                        projects. Join a community where sharing knowledge and experiences is encouraged.</p>
+                    <br>
+                        <button class="blue-button"><a href="https://chat.whatsapp.com/ISzPWBcam0C4w8c4R7bbr6" target="_blank">Join the Community</a></button>
+                </div>
+            </div>
+            <div class="cardd odd-card-green">
+                <div class="default-text">GROW</div>
+                <div class="hover-text">
+                    <p>Transform your ideas into reality by working on impactful projects. Collaborate
+                        with peers to create innovative solutions that make a difference.</p>
+                    <br>
+                        <button class="green-button"><a href="#Grow">Start Growing</a></button>
+                </div>
+            </div>
+            <div class="cardd odd-card-yellow">
+                <div class="default-text">BUILD</div>
+                <div class="hover-text">
+                    <p>Develop both personally and professionally and contribute through collaboration
+                        and challenging projects in tech to create lasting impacts.</p>
+                   <br>
+                        <button class="yellow-button"><a href="#Projects">View our Projects</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!--after team section -->
+        <section class="events-section" id="events">
+            <h1 class="events-title">Events</h1>
+            <div class="events-container">
+                <a href="event-details.html?event=cybersecurity" class="event-button" style="text-decoration: none;"> 
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="assets/DSC_1108.JPG" alt="Hackathon">
+                    </div>
+                    <h3 class="event-title">Event on Cybersecuirty</h3>
+                    <p class="event-description">Hands-On Cybersecurity: Defend, Detect, Deploy - A Practical Experience</p>
+                      
+                </div>
+            </a>
+            <a href="event-details.html?event=quiz" class="event-button" style="text-decoration: none;"> 
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="./assets/quizPic.jpeg" alt="Quizzes">
+                    </div>
+                    <h3 class="event-title">Quizzes</h3>
+                    <p class="event-description">Engaging quizzes challenge knowledge, encourage learning, & spark
+                        friendly competition</p>
+                </div>
+            </a>
+            <a href="event-details.html?event=Workshops" class="event-button" style="text-decoration: none;"> 
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="./assets/workPic.jpeg" alt="Workshops">
+                    </div>
+                    <h3 class="event-title">Workshops</h3>
+                    <p class="event-description">Hands-on workshops provide practical skills, expert guidance, and
+                        collaborative learning.</p>
+                </div>
+            </a>
+            <!-- <a href="event-details.html?event=Seminars" class="event-button" style="text-decoration: none;"> 
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="./assets/semiPic.jpeg" alt="Seminars">
+                    </div>
+                    <h3 class="event-title">Seminars</h3>
+                    <p class="event-description">Our club's seminars offer insightful discussions, expert talks, and
+                        skill-building opportunities.</p>
+                </div>
+            </a>
+            <a href="event-details.html?event=Tech-Talks" class="event-button" style="text-decoration: none;"> 
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="./assets/techTalk.jpeg" alt="Tech Talks">
+                    </div>
+                    <h3 class="event-title">Tech Talks</h3>
+                    <p class="event-description">Industry experts share insights on latest technology trends and
+                        innovations.</p>
+                </div>
+            </a>
+            <a href="event-details.html?event=Coding-Competitions" class="event-button" style="text-decoration: none;"> 
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="./assets/coding.jpg" alt="Coding Competitions">
+                    </div>
+                    <h3 class="event-title">Coding Competitions</h3>
+                    <p class="event-description">Competitive programming events to enhance problem-solving skills.</p>
+                </div>
+            </a>
+            </div> -->
+        </section>
+
+        <section class="events-section" id="Projects">
+            <h1 class="events-title">Projects</h1>
+            <div class="events-container">
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="assets/ai-assistant.avif" alt="Project 1">
+                    </div>
+                    <h3 class="event-title">AI Assistant</h3>
+                    <p class="event-description">An intelligent virtual assistant powered by machine learning to help
+                        with daily tasks.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="./assets/Smart-Home.jpg" alt="Project 2">
+                    </div>
+                    <h3 class="event-title">Smart Home App</h3>
+                    <p class="event-description">IoT-based home automation system for controlling household devices
+                        remotely.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="./assets/health-track.avif" alt="Project 3">
+                    </div>
+                    <h3 class="event-title">Health Tracker</h3>
+                    <p class="event-description">Mobile application for monitoring fitness activities and health
+                        metrics.</p>
+                </div>
+<!-- 
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="./assets/e-learning.jpg" alt="Project 4">
+                    </div>
+                    <h3 class="event-title">E-Learning Platform</h3>
+                    <p class="event-description">Web-based learning management system for online education and skill
+                        development.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="./assets/eco-monitor.png" alt="Project 5">
+                    </div>
+                    <h3 class="event-title">Eco Monitor</h3>
+                    <p class="event-description">Environmental monitoring system using sensors to track air quality and
+                        pollution levels.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="event-image">
+                        <img src="./assets/ar-nav.webp" alt="Project 6">
+                    </div>
+                    <h3 class="event-title">AR Navigation</h3>
+                    <p class="event-description">Augmented reality navigation system for indoor and outdoor wayfinding.
+                    </p>
+                </div>
+            </div> -->
+        </section>
+
+        <section class="team-section" id="team">
+            <h1 class="team-title">Our Team</h1>
+            <div class="team-container">
+                <div class="card-track">
+                    <!--set of cards -->
+                    <div class="card">
+                        <img src="assets/Wafiza.JPG" alt="Team Member">
+                        <h3>Wafiza Syed </h3>
+                        <p><b>Lead</b></p>
+                        <p>GDG-CITech Main</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Wafiza"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/wafiza-syed-0a0182249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+                            "><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Veeresh.jpg" alt="Team Member">
+                        <h3>Veeresh R Dodamani
+                        </h3>
+                        <p><b>Co Lead</b></p>
+                        <p>Web Dev</p>
+                        <div class="social-links">
+                            <a href="https://github.com/VeereshDodamani" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/veeresh-r-dodamani-69b349239/"  target="_blank"><img
+                                    src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Vaibhav.jpg" alt="Team Member">
+                        <h3>Vaibhav Srivastava  </h3>
+                        
+                        <p><b>Core Team</b></p>
+                        <p>Cyber security</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/vaibhav-srivastava-041560250/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Sai.JPG" alt="Team Member">
+                        <h3>Sai Kiran J</h3>
+                        
+                        <p><b>Core Team</b></p>
+                        <p>Ui/Ux</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Sai-kiranj" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://in.linkedin.com/in/saikiranj02" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Gagan.JPG" alt="Team Member">
+                        <h3>Gagan Hegde</h3>
+                        <p><b>Core Team</b></p>
+                        <p>Web Dev</p>
+                        <div class="social-links">
+                            <a href="https://github.com/GaganHegde14" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/gaganhegde14/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Chetana.JPG" alt="Team Member">
+                        <h3>Chethana G</h3>
+                        <p><b>Core Team</b></p>
+                        <p>Curator</p>
+                        <div class="social-links">
+                            <a href="https://github.com/chetx27" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/chethana-g-91202631a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/aman.JPG" alt="Team Member">
+                        <h3>Aman Trivedi </h3>
+                        <p><b>Core Team</b></p>
+                        <p>Ai/Ml</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/aman-trivedi-625909313" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/kaif.JPG" alt="Team Member">
+                        <h3>Kaif Ali Khan</h3>
+                        <p><b>Volunteer</b></p>
+                        <p>Web Dev</p>
+                        <div class="social-links">
+                            <a href="https://github.com/kawfeee"  target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="http://www.linkedin.com/in/kaifalikhan" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Yamini.JPG"alt="Team Member">
+                        <h3>Yamini Tantuway   </h3>
+                        <p><b>Volunteer</b></p>
+                        <p>Tech blogger</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Yaminitantuway" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/yamini-tantuway-17b4872bb/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/suryansh.JPG" alt="Team Member">
+                        <h3>Suryansh purwar</h3>
+                        <p><b>Volunteer</b></p>
+                        <p>Ui/Ux</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/suryansh-purwar-762829310/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/Jaijan.JPG" alt="Team Member">
+                        <h3>Jaijan S</h3>
+                        <p><b>Volunteer</b></p>
+                        <p>Game Dev</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Jaijan" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/jaijan-s-975210300/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                    <!-- Repeat for other cards -->
+                </div>
+                
+            </div>
+            <div class="button-container">
+                <button class="see-all-btn">See All</button>
+            </div>
+        </section>
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h1>Contact us</h1>
+                <p class="contact-desc">
+                    Need to get in touch with us? Either fill out the form with your inquiry or 
+                    find the <a href="mailto:info@gdgcit.com" class="department-email">department email</a> you'd like to contact below.
+                </p>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName"style="color:whitesmoke;">First name*</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName"style="color:whitesmoke;">Last name</label>
+                            <input type="text" id="lastName">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"style="color: whitesmoke;">Email*</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" style="color: rgb(255, 251, 251);">Drop your message here</label>
+                        <textarea id="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+
+
+
+    </main><footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/logoNObg.png" alt="GDSC Logo" class="footer-logo-img">
+                    <h3>GDG-CIT MAIN CAMPUS</h3>
+                </div>
+                <p>Empowering students to become innovators and tech leaders of tomorrow through learning, collaboration, and community building.</p>
+            </div>
+            <div class="footer-section footer-center">
+                <h3>Connect With Us</h3>
+                <div class="unique-card">
+                    <a class="unique-social-container whatsapp-container" href="https://chat.whatsapp.com/ISzPWBcam0C4w8c4R7bbr6">
+                      <svg viewBox="0 0 16 16" class="unique-social-svg whatsapp-svg">
+                        <path
+                          d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                        ></path>
+                      </svg>
+                    </a>
+                  
+                    <a class="unique-social-container linkedin-container" href="https://www.linkedin.com/company/gdsccit/?fbclid=PAZXh0bgNhZW0CMTEAAab0hwgPhuu_vaiqs3fyXHA3MRrJhNfY1G5dgh1R3Bvy16G5bXAL-OZgqOk_aem_Xk_1wZqglW597CshVFYOdg">
+                      <svg viewBox="0 0 448 512" class="unique-social-svg linkedin-svg">
+                        <path
+                          d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                        ></path>
+                      </svg>
+                    </a>
+                  
+                    <a class="unique-social-container instagram-container" href="https://www.instagram.com/gdg.cit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                      <svg viewBox="0 0 16 16" class="unique-social-svg instagram-svg">
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                  
+            </div>
+            
+            <div class="footer-section footer-right">
+                <h3>More Information</h3>
+                <p>Contact us: info@gdgcit.com</p>
+                <p>Phone: +91 00000000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="google-colors">
+                <span style="background: #4285F4;"></span>
+                <span style="background: #34A853;"></span>
+                <span style="background: #FBBC05;"></span>
+                <span style="background: #EA4335;"></span>
+            </div>
+            <p>&copy; 2024 GDSC-CIT. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
