@@ -61,30 +61,29 @@ body {
 }
 .image-gallery-wrapper {
     position: relative;
-    overflow: hidden; /* Hide any overflowing content */
-    margin-top: 20px;
+    overflow: hidden; /* Ensure the gallery fits within the container */
 }
 
 .image-gallery {
     display: flex;
-    gap: 15px;
-    overflow: hidden; /* Hide scrollbars completely */
+    flex-wrap: nowrap; /* Ensure images are in a single row */
+    overflow-x: hidden; /* Hide scrollbar */
     scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
 .image-gallery img {
-    width: 400px;
+    flex-shrink: 0;
+    width: 400px; /* Adjust based on your design */
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid #ddd;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 10px; /* Space between images */
 }
 
 .image-gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
 }
 
 @keyframes fadeInUp {

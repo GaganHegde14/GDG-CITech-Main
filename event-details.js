@@ -123,3 +123,32 @@ window.addEventListener('resize', () => {
 // Initialize and animate particles
 initParticles();
 animateParticles();
+
+
+// auto scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.querySelector(".image-gallery");
+    let scrollInterval;
+    const scrollSpeed = 2; // Adjust scroll speed
+
+    // Start auto-scrolling
+    const startScrolling = () => {
+        stopScrolling(); // Clear existing intervals
+        scrollInterval = setInterval(() => {
+            gallery.scrollLeft += scrollSpeed;
+            
+        }, 30); // Adjust timing for smooth scrolling
+    };
+
+    // Stop auto-scrolling
+    const stopScrolling = () => {
+        clearInterval(scrollInterval);
+    };
+
+    // Event listeners to stop/start scrolling on hover
+    gallery.addEventListener("mouseenter", stopScrolling);
+    gallery.addEventListener("mouseleave", startScrolling);
+
+    // Start auto-scrolling initially
+    startScrolling();
+});
