@@ -124,7 +124,7 @@ main {
 
 .text-section {
     flex: 0 1 800px; /* Instead of flex: 1, give it a max-width */
-    background-color: rgba(26, 26, 26, 0.9);
+    background-color: rgba(26, 26, 26, 0.2);
     padding: 2rem;
     letter-spacing: -1px;
     text-align: center; /* Center the text */
