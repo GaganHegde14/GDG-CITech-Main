@@ -448,4 +448,31 @@ function showText(card) {
       textElement.textContent = 'Our Vison..';
     }
   }
-  
+  document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent form from reloading the page
+
+    const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            alert('Form submitted successfully!');
+            document.querySelector('.contact-form').reset(); // Clear the form
+        } else {
+            alert('Failed to submit the form. Please try again.');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('An error occurred. Please try again later.');
+    }
+});
