@@ -2,17 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path'); // Import path for file handling
+const path = require('path'); // Import path module
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-
-// Serve static files from the 'public' folder
-app.use(express.static('public'));
 
 // MongoDB Connection
 const uri = 'mongodb+srv://GDG-WEBSITE-ADMIN:GDGCITECHMAIN2025@gdsc-citech-main.gpyjx.mongodb.net/contactFormDB?retryWrites=true&w=majority&appName=GDSC-CITECH-MAIN';
@@ -20,7 +17,16 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
-// Schema and Model
+// Serve static files from 'public' folder
+const publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
+
+// Root Route - Serve index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
+});
+
+// API Endpoint for Contact Form Submission
 const contactSchema = new mongoose.Schema({
     firstName: { type: String, required: true },
     lastName: String,
@@ -30,12 +36,6 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Root Route: Serve the index.html file
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// API Endpoint: Handle form submissions
 app.post('/submit', async (req, res) => {
     try {
         const { firstName, lastName, email, message } = req.body;
