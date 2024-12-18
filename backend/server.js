@@ -52,3 +52,8 @@ app.post('/submit', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
+const corsOptions = {
+    origin: 'https://gdg-citech-main.onrender.com', // Replace with your Render domain
+    methods: ['GET', 'POST'],
+};
+app.use(cors(corsOptions));
