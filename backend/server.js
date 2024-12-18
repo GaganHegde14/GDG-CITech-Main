@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path'); // Import path for file handling
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,9 @@ const port = 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+
+// Serve static files from the 'public' folder
+app.use(express.static('public'));
 
 // MongoDB Connection
 const uri = 'mongodb+srv://GDG-WEBSITE-ADMIN:GDGCITECHMAIN2025@gdsc-citech-main.gpyjx.mongodb.net/contactFormDB?retryWrites=true&w=majority&appName=GDSC-CITECH-MAIN';
@@ -26,12 +30,12 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Root Route (to fix "Cannot GET /")
+// Root Route: Serve the index.html file
 app.get('/', (req, res) => {
-    res.send('Server is running! Welcome to the GDSC-CITECH backend.');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// API Endpoint for Form Submission
+// API Endpoint: Handle form submissions
 app.post('/submit', async (req, res) => {
     try {
         const { firstName, lastName, email, message } = req.body;
