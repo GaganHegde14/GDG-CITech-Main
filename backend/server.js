@@ -26,7 +26,12 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// API Endpoint
+// Root Route (to fix "Cannot GET /")
+app.get('/', (req, res) => {
+    res.send('Server is running! Welcome to the GDSC-CITECH backend.');
+});
+
+// API Endpoint for Form Submission
 app.post('/submit', async (req, res) => {
     try {
         const { firstName, lastName, email, message } = req.body;
