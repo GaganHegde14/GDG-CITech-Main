@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const uri = 'mongodb+srv://GDG-WEBSITE-ADMIN:GDGCITECHMAIN2025@gdsc-citech-main.gpyjx.mongodb.net/contactFormDB?retryWrites=true&w=majority&appName=GDSC-CITECH-MAIN';
+const uri = process.env.MONGO_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
