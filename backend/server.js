@@ -12,13 +12,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const uri = 'mongodb+srv://GDG-WEBSITE-ADMIN:GDGCITECHMAIN2025@gdsc-citech-main.gpyjx.mongodb.net/contactFormDB?retryWrites=true&w=majority&appName=GDSC-CITECH-MAIN';
+const uri = 'your_mongodb_connection_string'; // Replace with your MongoDB URI
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Serve static files from 'public' folder
-const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, '../public'); // Adjust for relative path
 app.use(express.static(publicPath));
 
 // Root Route - Serve index.html
