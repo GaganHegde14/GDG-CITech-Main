@@ -2,23 +2,28 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path'); // Import path module
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: 'https://your-render-domain.onrender.com', // Replace with Render domain
+    methods: ['GET', 'POST'],
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGO_URI; // Use environment variable for MongoDB URI
+mongoose.set('debug', true); // Enable debug logs
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Serve static files from 'public' folder
-const publicPath = path.join(__dirname, '../public'); // Adjust for relative path
+const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 
 // Root Route - Serve index.html
@@ -52,8 +57,3 @@ app.post('/submit', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
-const corsOptions = {
-    origin: 'https://gdg-citech-main.onrender.com', // Replace with your Render domain
-    methods: ['GET', 'POST'],
-};
-app.use(cors(corsOptions));
