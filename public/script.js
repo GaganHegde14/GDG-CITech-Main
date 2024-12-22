@@ -12,7 +12,7 @@ const centerY = canvas.height / 2;
 // Timer to disable center focus after 10 seconds
 setTimeout(() => {
     centerAttraction = false;
-}, 4500);
+},4500);
 
 // Define a range of colors that work on light and dark backgrounds
 const particleColors = [
@@ -98,7 +98,6 @@ window.addEventListener('resize', () => {
 // Initialize and animate particles
 initParticles();
 animateParticles();
-
 document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.querySelector('.preloader');
     const preloaderVideo = document.getElementById('preloader-video');
