@@ -35,6 +35,70 @@ body {
 }
 
 /* Image Gallery */
+.image-gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    padding: 20px 0;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 25px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 47px 10px;
+}
+
+.image-gallery img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFade 0.8s ease forwards;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Delay each image animation */
+.image-gallery img:nth-child(1) { animation-delay: 0.2s; }
+.image-gallery img:nth-child(2) { animation-delay: 0.4s; }
+.image-gallery img:nth-child(3) { animation-delay: 0.6s; }
+
+/* Enhanced hover effect with more space for animation */
+.image-gallery img:hover {
+    transform: translateY(-20px);
+    box-shadow: 
+        0 25px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(66, 133, 244, 0.2);
+    border-color: rgba(66, 133, 244, 0.5);
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 300px;
+        height: 250px;
+    }
+    
+    .image-gallery {
+        padding: 15px 5px;
+    }
+}
 
 
 /* Animations */
@@ -58,32 +122,6 @@ body {
         letter-spacing: 1px;
         opacity: 1;
     }
-}
-.image-gallery-wrapper {
-    position: relative;
-    overflow: hidden; /* Ensure the gallery fits within the container */
-}
-
-.image-gallery {
-    display: flex;
-    flex-wrap: nowrap; /* Ensure images are in a single row */
-    overflow-x: hidden; /* Hide scrollbar */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-}
-
-.image-gallery img {
-    flex-shrink: 0;
-    width: 400px; /* Adjust based on your design */
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 10px; /* Space between images */
-}
-
-.image-gallery img:hover {
-    transform: scale(1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
 }
 
 @keyframes fadeInUp {
