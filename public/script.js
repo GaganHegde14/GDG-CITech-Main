@@ -458,12 +458,12 @@ function showText(card) {
     };
 
     try {
-        const response = await fetch('https://gdg-citech-main.vercel.app/submit', { // Use the deployed server URL
+        const response = await fetch('/api/submit', { // Local relative URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
         });
-
+    
         if (response.ok) {
             alert('Form submitted successfully!');
             document.querySelector('.contact-form').reset(); // Clear the form
