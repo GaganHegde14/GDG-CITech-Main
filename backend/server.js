@@ -8,10 +8,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-const corsOptions = {
-    origin: 'https://gdg-citech-main.vercel.app/', // Replace with Render domain
-    methods: ['GET', 'POST'],
-};
+const cors = require('cors');
+app.use(cors({
+  origin: '*', // or '*' to allow all origins
+  methods: ['GET', 'POST'], // Specify allowed methods
+}));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
