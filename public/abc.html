@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDSC Logo Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1f1f1f;
+      overflow: hidden;
+    }
+    .animation-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      animation: move-and-fade 2s ease-in-out forwards;
+    }
+
+    .circle.green {
+      background-color: #09b157;
+      animation-delay: 0s;
+    }
+    .circle.blue {
+      background-color: #4299f7;
+      animation-delay: 0.2s;
+    }
+    .circle.yellow {
+      background-color: #fbb13c;
+      animation-delay: 0.4s;
+    }
+    .circle.red {
+      background-color: #ea4c46;
+      animation-delay: 0.6s;
+    }
+
+    .center-animation .circle {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes move-and-fade {
+      0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2) translate(50px, -50px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(0) translate(0, 0);
+        opacity: 0;
+      }
+    }
+
+    .final-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      width: 100px;
+      height: auto;
+      animation: image-fade-in 2s 4s forwards;
+    }
+
+    @keyframes image-fade-in {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="center-animation">
+      <div class="circle green"></div>
+      <div class="circle blue"></div>
+      <div class="circle yellow"></div>
+      <div class="circle red"></div>
+    </div>
+    <div class="center-animation">
+      <div class="circle green"></div>
+      <div class="circle blue"></div>
+      <div class="circle yellow"></div>
+      <div class="circle red"></div>
+    </div>
+    <img class="final-image" src="assets/logoNObg.png" alt="Final Image">
+  </div>
+</body>
+</html>

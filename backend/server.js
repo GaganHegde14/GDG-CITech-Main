@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 const corsOptions = {
-    origin: 'https://gdg-citech-main.onrender.com', // Replace with Render domain
+    origin: 'https://gdg-citech-main.vercel.app/', // Replace with Render domain
     methods: ['GET', 'POST'],
 };
 app.use(cors(corsOptions));
