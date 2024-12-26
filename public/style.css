@@ -871,6 +871,12 @@ h2{
     color: #999;
     line-height: 1.6;
 }
+@media screen and (max-width: 768px) { /* Adjust max-width as needed */
+    .footer-section p {
+        font-size: 15px; /* Reduce the font size for mobile screens */
+        line-height: 1.4; /* Optional: Adjust line-height for better spacing */
+    }
+}
 
 .footer-links {
     list-style: none;
