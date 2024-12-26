@@ -136,6 +136,12 @@ main {
     animation: colorChange 3s ;
     animation-delay: 3.9s; /* Add a delay for the animated text */
 }
+@media screen and (max-width: 768px) { /* Adjust max-width as needed */
+    .animated-text {
+        font-size: 19px; /* Reduce the font size for mobile screens */
+        letter-spacing: -2px; /* Optional: Adjust letter-spacing for better readability */
+    }
+}
 
 @keyframes colorChange {
     0% {
@@ -1071,10 +1077,11 @@ html, body {
         width: 100%;
         padding: 0;
         word-wrap: break-word;
-        font-family: "Cinzel", serif;
+        font-family: "Noto Sans", serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
+  font-size: 16px;
     }
     
 
