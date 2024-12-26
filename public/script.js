@@ -476,3 +476,7 @@ function showText(card) {
         alert('An error occurred. Please try again later.');
     }
 });
+
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
