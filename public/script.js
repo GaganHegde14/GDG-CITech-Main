@@ -458,7 +458,7 @@ function showText(card) {
     };
 
     try {
-        const response = await fetch('/api/submit', { // Correct
+        const response = await fetch('api\submit.js', { // Correct
             // Local relative URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
