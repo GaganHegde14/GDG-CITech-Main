@@ -290,4 +290,20 @@ display: block;
       transform: translateY(0%);
     }
   }
+  /* Custom scrollbar for modern browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1f1f1f; /* Dark background for the scroll space */
+    border-radius: 10px; /* Rounded corners for the track (scroll space) */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #c7c5c59c; /* Initially matching the track color */
+    border-radius: 50px; /* Smooth and fully rounded corners for the thumb */
+    border: 2px solid #1f1f1f; /* Border to blend with the track */
+    transition: background-color 0.3s ease; /* Smooth transition for color changes */
+  }
   
