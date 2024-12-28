@@ -2250,3 +2250,6 @@ body.preload {
 img {
     pointer-events: none; /* Prevent dragging */
 }
+body {
+    cursor: url('assets/cursor\ \(1\).png'), auto;
+}
