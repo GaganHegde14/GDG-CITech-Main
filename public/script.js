@@ -493,3 +493,11 @@ document.addEventListener('keydown', (e) => {
         e.preventDefault();
     }
 });
+// Disable text selection
+document.addEventListener('selectstart', (e) => e.preventDefault());
+
+// Disable copy action
+document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    alert('Copying text is disabled on this website!');
+});

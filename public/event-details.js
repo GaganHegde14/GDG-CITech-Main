@@ -152,3 +152,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start auto-scrolling initially
     startScrolling();
 });
+
+// Disable right-click
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+// Disable specific key combinations and F12
+document.addEventListener('keydown', (e) => {
+    // List of blocked keys
+    const blockedKeys = ['u', 'i', 'j', 'c']; // Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+
+    // Prevent F12 and blocked combinations
+    if (
+        e.key === 'F12' || // F12 key
+        (e.ctrlKey && blockedKeys.includes(e.key.toLowerCase())) || // Ctrl+U, Ctrl+Shift+I/J/C
+        (e.ctrlKey && e.shiftKey && blockedKeys.includes(e.key.toLowerCase()))
+    ) {
+        e.preventDefault();
+    }
+});
+// Disable text selection
+document.addEventListener('selectstart', (e) => e.preventDefault());
+
+// Disable copy action
+document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    alert('Copying text is disabled on this website!');
+});

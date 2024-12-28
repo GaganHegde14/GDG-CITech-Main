@@ -2240,3 +2240,13 @@ body.preload {
     transform: rotate(-35deg);
   }
    */
+   body {
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+}
+
+/* Optional: Disable dragging images */
+img {
+    pointer-events: none; /* Prevent dragging */
+}
