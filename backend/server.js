@@ -4,10 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
-
-const contactRoutes=require('./routes/contactroute');
-const registerRoute=require('./routes/registerroute');
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -19,7 +15,6 @@ app.use(cors({
 }));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-app.use(express.json());
 
 // MongoDB Connection
 const uri = process.env.MONGO_URI; // Use environment variable for MongoDB URI
@@ -44,27 +39,27 @@ app.get('/', (req, res) => {
 });
 
 // API Endpoint for Contact Form Submission
-// const contactSchema = new mongoose.Schema({
-//     firstName: { type: String, required: true },
-//     lastName: String,
-//     email: { type: String, required: true },
-//     message: String,
-// });
+const contactSchema = new mongoose.Schema({
+    firstName: { type: String, required: true },
+    lastName: String,
+    email: { type: String, required: true },
+    message: String,
+});
 
-// const Contact = mongoose.model('Contact', contactSchema);
+const Contact = mongoose.model('Contact', contactSchema);
 
-// app.post('/submit', async (req, res) => {
-//     try {
-//         console.log('Form Data Received:', req.body);
-//         const { firstName, lastName, email, message } = req.body;
-//         const newContact = new Contact({ firstName, lastName, email, message });
-//         await newContact.save();
-//         res.status(201).json({ message: 'Form submitted successfully!' });
-//     } catch (err) {
-//         console.error('Error in /submit endpoint:', err);
-//         res.status(500).json({ error: 'Failed to submit form' });
-//     }
-// });
+app.post('/submit', async (req, res) => {
+    try {
+        console.log('Form Data Received:', req.body);
+        const { firstName, lastName, email, message } = req.body;
+        const newContact = new Contact({ firstName, lastName, email, message });
+        await newContact.save();
+        res.status(201).json({ message: 'Form submitted successfully!' });
+    } catch (err) {
+        console.error('Error in /submit endpoint:', err);
+        res.status(500).json({ error: 'Failed to submit form' });
+    }
+});
 
 // Start the server
 app.listen(port, () => {
