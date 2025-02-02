@@ -2420,3 +2420,50 @@ img {
         max-height: 200px;
     }
 }
+/* Wrapper for centering the button */
+.popup-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.custom-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-social-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Instagram icon */
+.social-icon {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .custom-social-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
