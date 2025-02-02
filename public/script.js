@@ -501,3 +501,16 @@ document.addEventListener('copy', (e) => {
     e.preventDefault();
     alert('Copying text is disabled on this website!');
 });
+function toggleModal() {
+    let modal = document.getElementById("notifyModal");
+    modal.style.display = modal.style.display === "block" ? "none" : "block";
+}
+
+window.addEventListener("scroll", function() {
+    let button = document.getElementById("notifyButton");
+    if (window.scrollY > window.innerHeight) {
+        button.style.display = "flex";
+    } else {
+        button.style.display = "none";
+    }
+});

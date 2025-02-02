@@ -2250,3 +2250,173 @@ body.preload {
 img {
     pointer-events: none; /* Prevent dragging */
 }
+.notify-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(to left,rgb(173, 154, 255),rgb(149, 110, 255));
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border: none;
+    position: fixed;
+    cursor: pointer;
+    transition-duration: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+    display: none;
+    z-index: 1000;
+}
+
+.notify-bell {
+    width: 13px;
+}
+
+.notify-bell path {
+    fill: rgb(255, 255, 255);
+}
+
+.notify-button:hover {
+    background: linear-gradient(to left,rgb(154, 131, 255),rgb(135, 91, 255));
+}
+
+.notify-button:active {
+    transform: scale(0.97);
+    transition-duration: .2s;
+}
+
+.notify-button:hover .notify-bell {
+    animation: notifyBellRing 0.9s both;
+}
+
+@keyframes notifyBellRing {
+    0%, 100% { transform-origin: top; }
+    15% { transform: rotateZ(10deg); }
+    30% { transform: rotateZ(-10deg); }
+    45% { transform: rotateZ(5deg); }
+    60% { transform: rotateZ(-5deg); }
+    75% { transform: rotateZ(2deg); }
+}
+
+.notify-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.notify-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.notify-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    max-height: 70%;
+    background: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+    text-align: center;
+    overflow-y: auto;
+    border: 2px solid rgba(149, 110, 255, 0.7);
+    animation: fadeInn 0.3s ease-in-out;
+}
+
+
+@keyframes fadeInn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+.notify-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(135, 91, 255);
+    transition: 0.2s ease-in-out;
+}
+
+.notify-close:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+.notify-modal h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(135, 91, 255);
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(149, 110, 255, 0.5);
+    padding-bottom: 10px;
+}
+
+.notify-modal p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    .notify-modal {
+        width: 90%;
+        max-width: 95%;
+        padding: 15px;
+        max-height: 80%;
+    }
+
+    .notify-modal h3 {
+        font-size: 20px;
+    }
+
+    .notify-modal p {
+        font-size: 14px;
+    }
+
+    .notify-close {
+        font-size: 18px;
+        top: 10px;
+        right: 12px;
+    }
+
+    .notify-image {
+        max-height: 200px;
+    }
+}
