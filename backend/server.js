@@ -1,67 +1,70 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const path = require('path');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-const cors = require('cors');
-app.use(cors({
-  origin: '*', // or '*' to allow all origins
-  methods: ['GET', 'POST'], // Specify allowed methods
-}));
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "*", // or '*' to allow all origins
+    methods: ["GET", "POST"], // Specify allowed methods
+  })
+);
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // MongoDB Connection
 const uri = process.env.MONGO_URI; // Use environment variable for MongoDB URI
-mongoose.set('debug', true); // Enable debug logs
-console.log('MongoDB URI:', process.env.MONGO_URI || 'MONGO_URI not set');
+mongoose.set("debug", true); // Enable debug logs
+console.log("MongoDB URI:", process.env.MONGO_URI || "MONGO_URI not set");
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connected to MongoDB Atlas'))
-    .catch(err => console.error('Error connecting to MongoDB:', err));
+mongoose
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Serve static files from 'public' folder
-const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, "../public");
 app.use(express.static(publicPath));
 
 // Routes
-app.use('/api/contact', contactRoutes);
-app.use('/api/other', otherRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api/other", otherRoutes);
 
 // Root Route - Serve index.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
+app.get("/", async (req, res) => {
+  await res.sendFile(path.join(publicPath, "index.html"));
 });
 
 // API Endpoint for Contact Form Submission
 const contactSchema = new mongoose.Schema({
-    firstName: { type: String, required: true },
-    lastName: String,
-    email: { type: String, required: true },
-    message: String,
+  firstName: { type: String, required: true },
+  lastName: String,
+  email: { type: String, required: true },
+  message: String,
 });
 
-const Contact = mongoose.model('Contact', contactSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
-app.post('/submit', async (req, res) => {
-    try {
-        console.log('Form Data Received:', req.body);
-        const { firstName, lastName, email, message } = req.body;
-        const newContact = new Contact({ firstName, lastName, email, message });
-        await newContact.save();
-        res.status(201).json({ message: 'Form submitted successfully!' });
-    } catch (err) {
-        console.error('Error in /submit endpoint:', err);
-        res.status(500).json({ error: 'Failed to submit form' });
-    }
+app.post("/submit", async (req, res) => {
+  try {
+    console.log("Form Data Received:", req.body);
+    const { firstName, lastName, email, message } = req.body;
+    const newContact = new Contact({ firstName, lastName, email, message });
+    await newContact.save();
+    res.status(201).json({ message: "Form submitted successfully!" });
+  } catch (err) {
+    console.error("Error in /submit endpoint:", err);
+    res.status(500).json({ error: "Failed to submit form" });
+  }
 });
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
