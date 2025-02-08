@@ -519,9 +519,9 @@ html {
   font-style: normal;
 }
 
-.events-title.visible {
+/* .events-title.visible {
   animation: fadeInUp 1s ease forwards;
-}
+} */
 
 .events-container {
   max-width: 1400px;
@@ -1539,7 +1539,7 @@ body {
 
 .events-title.reveal {
   opacity: 1;
-  transform: translateY(0);
+  /* transform: translateY(0); */
 }
 
 .event-card,
@@ -1552,7 +1552,7 @@ body {
 .event-card.reveal,
 .project-card.reveal {
   opacity: 1;
-  transform: translateY(0);
+  /* transform: translateY(0); */
 }
 
 /* Stagger effect for cards */
@@ -2175,7 +2175,7 @@ body.preload {
   background-color: #c000009c; /* Initially matching the track color */
   border-radius: 50px; /* Smooth and fully rounded corners for the thumb */
   border: 2px solid #1f1f1f; /* Border to blend with the track */
-  transition: background-color 0.3s ease; /* Smooth transition for color changes */
+  /* transition: background-color 0.3s ease; Smooth transition for color changes */
 }
 /*
 .styled-button {
@@ -2375,7 +2375,7 @@ img {
   animation: fadeInn 0.3s ease-in-out;
 }
 
-@keyframes fadeInn {
+/* @keyframes fadeInn {
   from {
     opacity: 0;
     transform: translate(-50%, -55%);
@@ -2384,7 +2384,7 @@ img {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-}
+} */
 .notify-close {
   position: absolute;
   top: 12px;
